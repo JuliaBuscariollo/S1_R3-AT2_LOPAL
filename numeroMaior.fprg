@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="numeroMaior"/>
+        <attribute name="authors" value="DES-I1HSB"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-04-08 01:18:26 "/>
+        <attribute name="created" value="REVTLUkxSFNCO0VTTjUxMk4xMjYyODMxOzIwMjUtMDQtMDg7IjEyOjUzOjQwICI7MjYxOA=="/>
+        <attribute name="edited" value="REVTLUkxSFNCO0VTTjUxMk4xMjYyODMxOzIwMjUtMDQtMDg7IjAxOjE4OjI2ICI7MTsyNzI5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Real" array="False" size=""/>
+            <output expression="&quot;digite um n&#250;mero maior que zero:&quot;" newline="True"/>
+            <input variable="numero"/>
+            <if expression="numero&gt;0">
+                <then>
+                    <output expression="&quot;este n&#250;mero &#233; maior que zero!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="numero==0">
+                        <then>
+                            <output expression="&quot;este numero &#233; igual &#225; zero!&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;esse n&#250;mero &#233; menor que zero!&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
