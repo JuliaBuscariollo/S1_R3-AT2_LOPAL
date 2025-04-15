@@ -1,23 +1,13 @@
-//
-const valorCompra = parseFloat(prompt("digite o valor da compra:"));
+const multiploCinco = parseFloat(prompt("Digite um número:"));
 
 // Verifica se o valor digitado é um número válido
-if (isNaN(valorCompra)) {
+if (isNaN(multiploCinco)) {
     alert("Erro: Você não digitou um número válido!");
-
 } else {
-
-        if (valorCompra<100) {
-        // irá alertar caso a compra não tenha atingido o valor minimo
-        alert (`sua compra não atingiu o valor minimo para ter direito á desconto, o valor da compra ficou em ${valorCompra}`)
-
-        } else {
-
-            const valorDesconto = valorCompra - (valorCompra * 0.10);
-            //irá demonstrar o valor que ficara a conta após a aplicação do desconto
-            alert(`o valor da sua compra iria ficar R$ ${valorCompra}, mas após a aplicação do desconto, o valor da compra será ${valorDesconto.toFixed(2)}!`)
-
-            }
-
-        } 
-    
+    // Verifica se o número é múltiplo de 5
+    if (multiploCinco % 5 === 0) {
+        alert("O número " + multiploCinco + " é múltiplo de cinco!");
+    } else {
+        alert("O número " + multiploCinco + " não é múltiplo de cinco.");
+    }
+}
