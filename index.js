@@ -1,16 +1,22 @@
- //A constante abaixo armazenará o número digitado pelo usuario
-const numeroPar = parseFloat(prompt("digite um número:"));
+//
+const valorCompra = parseFloat(prompt("digite o valor da compra:"));
 
 // Verifica se o valor digitado é um número válido
-if (isNaN(numeroPar)) {
+if (isNaN(valorCompra)) {
     alert("Erro: Você não digitou um número válido!");
-} else {
-    if (numeroPar % 2 === 0) {
-        // Se o numero tiver o resto igual a 0, a resposta será par
-        alert("Seu número é par");
 
-    } else {
+} else {
+
+        if (valorCompra<100) {
         // Se o numero não tiver resto de 0 em uma divisão, a resposta será impar
-        alert("Erro: seu número é impar");
-    }
-}
+        alert (`sua compra não atingiu o valor minimo para ter direito á desconto, o valor da compra ficou em ${valorCompra}`)
+
+        } else {
+
+            const valorDesconto = valorCompra - (valorCompra * 0.10);
+            alert(`o valor da sua compra iria ficar R$ ${valorCompra}, mas após a aplicação do desconto, o valor da compra será ${valorDesconto.toFixed(2)}!`)
+
+            }
+
+        } 
+        
