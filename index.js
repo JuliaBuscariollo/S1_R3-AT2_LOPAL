@@ -1,13 +1,17 @@
-const multiploCinco = parseFloat(prompt("Digite um número:"));
+// Solicita ao usuário que digite um número
+let numero = parseInt(prompt("Digite um número para ver sua tabuada:"));
 
 // Verifica se o valor digitado é um número válido
-if (isNaN(multiploCinco)) {
-    alert("Erro: Você não digitou um número válido!");
+if (isNaN(numero)) {
+    alert("ERRO! Por favor, digite um número válido.");
 } else {
-    // Verifica se o número é múltiplo de 5
-    if (multiploCinco % 5 === 0) {
-        alert("O número " + multiploCinco + " é múltiplo de cinco!");
-    } else {
-        alert("O número " + multiploCinco + " não é múltiplo de cinco.");
+    let tabuada = `Tabuada do ${numero}:\n\n`;
+
+    // Gera a tabuada de 1 a 10 usando o for
+    for (let i = 1; i <= 10; i++) {
+        tabuada += `${numero} * ${i} = ${numero * i}\n`;
     }
+
+    // Exibe a tabuada
+    alert(tabuada);
 }
