@@ -1,17 +1,24 @@
-// Solicita ao usuário que digite um número
-let numero = parseInt(prompt("Digite um número para ver sua tabuada:"));
+// Inicialização das variáveis
+let soma = 0; // Armazena a soma das notas válidas
+let i = 0; // Contador para o número de notas válidas inseridas
 
-// Verifica se o valor digitado é um número válido
-if (isNaN(numero)) {
-    alert("ERRO! Por favor, digite um número válido.");
-} else {
-    let tabuada = `Tabuada do ${numero}:\n\n`;
+// Laço de repetição para obter as 5 notas
+for (; i < 5; ) {
+  // Solicita ao usuário que digite uma nota entre 0 e 10
+  let nota = parseFloat(prompt(`Digite a nota ${i + 1} (entre 0 e 10):`));
 
-    // Gera a tabuada de 1 a 10 usando o for
-    for (let i = 1; i <= 10; i++) {
-        tabuada += `${numero} * ${i} = ${numero * i}\n`;
-    }
-
-    // Exibe a tabuada
-    alert(tabuada);
+  // Verifica se a nota é válida (número entre 0 e 10)
+  if (!isNaN(nota) && nota >= 0 && nota <= 10) {
+    soma += nota; // Soma a nota válida à variável soma
+    i++; // Avança o índice para a próxima nota
+  } else {
+    // Se a nota for inválida, exibe um alerta e repete a solicitação
+    alert("Nota inválida. Tente novamente.");
+  }
 }
+
+// Calcula a média das 5 notas inseridas
+let media = soma / 5; // Divida a soma total pela quantidade de notas
+
+// Exibe a média no formato com duas casas decimais
+alert(`A média das notas é: ${media.toFixed(2)}`);
