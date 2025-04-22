@@ -1,24 +1,30 @@
-// Inicialização das variáveis
-let soma = 0; // Armazena a soma das notas válidas
-let i = 0; // Contador para o número de notas válidas inseridas
+// Solicita os dois números ao usuário
+let numero1 = parseInt(prompt("Digite o primeiro número:"));
+let numero2 = parseInt(prompt("Digite o segundo número:"));
 
-// Laço de repetição para obter as 5 notas
-for (; i < 5; ) {
-  // Solicita ao usuário que digite uma nota entre 0 e 10
-  let nota = parseFloat(prompt(`Digite a nota ${i + 1} (entre 0 e 10):`));
+// Definindo o intervalo de números (menor até o maior)
+let inicio;
+let fim;
 
-  // Verifica se a nota é válida (número entre 0 e 10)
-  if (!isNaN(nota) && nota >= 0 && nota <= 10) {
-    soma += nota; // Soma a nota válida à variável soma
-    i++; // Avança o índice para a próxima nota
-  } else {
-    // Se a nota for inválida, exibe um alerta e repete a solicitação
-    alert("Nota inválida. Tente novamente.");
+if (numero1 < numero2) {
+  inicio = numero1;
+  fim = numero2;
+} else {
+  inicio = numero2;
+  fim = numero1;
+}
+
+// Exibe os números pares no intervalo
+let numerosPares = "";
+for (let i = inicio; i <= fim; i++) {
+  if (i % 2 === 0) {
+    numerosPares += i + " "; // Concatena os números pares em uma string
   }
 }
 
-// Calcula a média das 5 notas inseridas
-let media = soma / 5; // Divida a soma total pela quantidade de notas
-
-// Exibe a média no formato com duas casas decimais
-alert(`A média das notas é: ${media.toFixed(2)}`);
+// Exibe os números pares encontrados
+if (numerosPares) {
+  alert(`Os números pares entre ${inicio} e ${fim} são: ${numerosPares}`);
+} else {
+  alert(`Não há números pares no intervalo entre ${inicio} e ${fim}.`);
+}
