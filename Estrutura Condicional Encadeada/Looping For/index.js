@@ -1,17 +1,27 @@
-// Solicita ao usuário que digite um número
-const numero = parseInt(prompt("Digite um número:"));
+// Inicializa a variável que armazenará a soma dos números digitados
+let soma = 0;
 
-// Verifica se o valor digitado é inválido (não numérico ou negativo)
-if (isNaN(numero) || numero < 0) {
-    alert("ERRO: Você digitou um caractere inválido.");
-} else {
-    let resultado = "";
+// Loop principal: repete 10 vezes para coletar os 10 números do usuário
+for (let i = 1; i <= 10; i++) {
+    let numero;
 
-    // números de 1 até o número digitado, separados por quebra de linha
-    for (let i = 1; i <= numero; i++) {
-        resultado += `${i}\n`;
+    // Loop de validação: continua pedindo até o usuário digitar um número válido
+    for (;;) {
+        // Solicita ao usuário que digite o i-ésimo número
+        numero = parseInt(prompt(`Digite o ${i}º número inteiro:`));
+
+        // Verifica se o valor digitado é um número válido
+        if (!isNaN(numero)) {
+            break; // Sai do loop de validação se o valor for válido
+        }
+
+        // Caso contrário, avisa o usuário e repete a solicitação
+        alert("Entrada inválida. Por favor, digite um número inteiro.");
     }
 
-    // Exibe todos os números no intervalo de 1 até o número informado
-    console.log(`Todos os números até ${numero} são:\n${resultado}`);
-}alert("resultado"+resultado)
+    // Adiciona o número validado à soma total
+    soma += numero;
+}
+
+// Exibe o resultado final da soma dos 10 números digitados
+alert(`A soma dos 10 números digitados é: ${soma}`);
